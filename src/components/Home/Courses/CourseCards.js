@@ -21,6 +21,8 @@ function CourseCards() {
       );
     } else if (sortOption === "rating") {
       filtered = filtered.sort((a, b) => b.rating - a.rating);
+    } else if (sortOption === "review") {
+      filtered = filtered.sort((a, b) => b.reviews - a.reviews);
     }
     setFilteredCourses(filtered);
   }
@@ -28,7 +30,9 @@ function CourseCards() {
   return (
     <div>
       <div>
-        <label htmlFor="sortOption">Sort by:</label>
+        <label htmlFor="sortOption">
+          Sort by: <i class="fa-solid fa-angle-down"></i>
+        </label>
         <select
           id="sortOption"
           value={sortOption}
@@ -37,6 +41,7 @@ function CourseCards() {
           <option value="relevance">Relevance</option>
           <option value="newest">Newest</option>
           <option value="rating">Highest Rated</option>
+          <option value="review">Most Reviewed</option>
         </select>
       </div>
       <div className="courseContainer">

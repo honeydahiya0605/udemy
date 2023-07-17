@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import udemy from "../../assets/udemy.svg";
 import { ReactComponent as MagnifyingGlassIcon } from "../../assets/magnifying-glass.svg";
 import { ReactComponent as ShoppingCartIcon } from "../../assets/shopping-cart.svg";
 
-function Header() {
+function Header({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (e) => {
+    onSearch(searchTerm);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onSearch(searchTerm);
+    }
+  };
+
   return (
     <div className="headerPrimary">
       <div className="left part">
-        <div className="udemyLogo">
+        <div className="logo">
           <img src={udemy} className="logo" alt="logo" />
         </div>
         <div className="categoriesDiv">
           <span className="categories">Categories</span>
         </div>
       </div>
-      <div className="mid part">
-        <div className="searchIcon">
+      <div className="mid part" onSubmit={handleSearch}>
+        <div className="searchIcon" onClick={handleSearch}>
           <MagnifyingGlassIcon className="icon" />
         </div>
-        <input className="searchBar" placeholder="Search for anything" />
+        <input
+          className="searchBar"
+          placeholder="Search for anything"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyPress}
+        />
       </div>
       <div className="right part">
         <div className="businessDiv">
