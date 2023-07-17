@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import coursesData from "../../../courses.json";
 import "./CourseCards.css";
+import { ReactComponent as Star } from "../../../assets/star.svg";
 
 function CourseCards() {
   const [sortOption, setSortOption] = useState("relevance");
@@ -29,10 +30,8 @@ function CourseCards() {
 
   return (
     <div>
-      <div>
-        <label htmlFor="sortOption">
-          Sort by: <i class="fa-solid fa-angle-down"></i>
-        </label>
+      <div className="sort">
+        <label htmlFor="sortOption">Sort by:</label>
         <select
           id="sortOption"
           value={sortOption}
@@ -50,15 +49,21 @@ function CourseCards() {
             <div className="image">
               <img src={course.image} alt="logo" />
             </div>
-            <h3>{course.title}</h3>
-            <p>{course.description}</p>
-            <p>Instructor: {course.instructor}</p>
-            <p>
-              Rating: {course.rating} <i class="fa-solid fa-star"></i>
-            </p>
-            <p>Hours: {course.hours}</p>
-            <p>Lectures: {course.lectures}</p>
-            <p>Price: {course.price}</p>
+            <div className="about">
+              <h3>{course.title}</h3>
+              <p>{course.description}</p>
+              <p className="grey">{course.instructor}</p>
+              <p className="grey">
+                {course.rating} <Star /> <Star /> <Star /> <Star /> <Star />
+              </p>
+              <p className="grey">{course.hours}</p>
+              <p className="grey">{course.lectures}</p>
+            </div>
+            <div className="price">
+              <p>
+                <b>&#8377;{course.price}</b>
+              </p>
+            </div>
           </div>
         ))}
       </div>
