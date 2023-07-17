@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import CourseCards from "./components/Home/Courses/CourseCards";
-import Caraousel from "./components/Home/Caraousel/Caraousel";
+import Content from "./components/Home/Content/Content";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <Header onSearch={handleSearch} />
-      {searchValue.toLowerCase() === "react" ? <CourseCards /> : <Caraousel />}
+      {searchValue.toLowerCase() === "react" ? <CourseCards /> : <Content />}
     </div>
   );
 }
