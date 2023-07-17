@@ -1,0 +1,29 @@
+.courseContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.courseCard {
+  width: 300px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.courseCard h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.courseCard p {
+  margin-bottom: 10px;
+}
+
+.courseCard img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
