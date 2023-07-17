@@ -22,9 +22,9 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 64px;
-  left: 72px;
-  width: 440px;
+  top: 20%;
+  left: 10%;
+  width: 50%;
   line-height: 22.4px;
   padding: 24px;
   background-color: white;
