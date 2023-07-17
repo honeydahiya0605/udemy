@@ -54,7 +54,8 @@ function CourseCards() {
               <p>{course.description}</p>
               <p className="grey">{course.instructor}</p>
               <p className="grey">
-                {course.rating} <Star /> <Star /> <Star /> <Star /> <Star />
+                {course.rating}
+                &#11088;&#11088;&#11088;&#11088;&#11088;
               </p>
               <p className="grey">{course.hours}</p>
               <p className="grey">{course.lectures}</p>
