@@ -7,7 +7,7 @@ import { ReactComponent as ShoppingCartIcon } from "../../assets/shopping-cart.s
 function Header({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = (e) => {
+  const handleSearch = () => {
     onSearch(searchTerm);
   };
 
@@ -27,7 +27,7 @@ function Header({ onSearch }) {
           <span className="categories">Categories</span>
         </div>
       </div>
-      <div className="mid part" onSubmit={handleSearch}>
+      <div className="mid part">
         <div className="searchIcon" onClick={handleSearch}>
           <MagnifyingGlassIcon className="icon" />
         </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import coursesData from "../../../courses.json";
 import "./CourseCards.css";
-import { ReactComponent as Star } from "../../../assets/star.svg";
 
 function CourseCards() {
   const [sortOption, setSortOption] = useState("relevance");
